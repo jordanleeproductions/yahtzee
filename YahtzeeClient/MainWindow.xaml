@@ -1,0 +1,390 @@
+﻿<Window x:Class="YahtzeeClient.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="MainWindow" Height="700" Width="525">
+    <Grid Name="YahtzeeRoot" >
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="10"/>
+            <ColumnDefinition/>
+            <ColumnDefinition Width="10"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="55"/>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="15"/>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="15"/>
+            <RowDefinition Height="155"/>
+        </Grid.RowDefinitions>
+
+        <Grid Grid.Row="0" Grid.Column="1">
+            <Label Content="Yahtzee" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" FontFamily="Trebuchet MS" FontSize="32" FontWeight="Bold" Width="213" Height="47"/>
+        </Grid>
+        <Grid Grid.Row="1" Grid.Column="1">
+            <Border BorderBrush="Black" BorderThickness="2"></Border>
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="100"/>
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="20"/>
+                    <RowDefinition Height="20"/>
+                    <RowDefinition Height="20"/>
+                    <RowDefinition Height="20"/>
+                    <RowDefinition Height="20"/>
+                    <RowDefinition Height="20"/>
+                    <RowDefinition Height="20"/>
+                    <RowDefinition Height="20"/>
+                    <RowDefinition Height="20"/>
+                    <RowDefinition Height="20"/>
+                </Grid.RowDefinitions>
+                <!--SCORE LABELS-->
+                <Grid Grid.Row="1" Grid.Column="1">
+                    <TextBox Name="aces" HorizontalAlignment="Stretch" FontFamily="Buxton Sketch" UseLayoutRounding="True" HorizontalContentAlignment="Center" GotFocus="ScoreCardSelection"  IsReadOnly="True"/>
+                </Grid>
+                <Grid Grid.Row="2" Grid.Column="1">
+                    <TextBox Name="twos" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" FontFamily="Buxton Sketch" UseLayoutRounding="True" HorizontalContentAlignment="Center" GotFocus="ScoreCardSelection"  IsReadOnly="True"/>
+                </Grid>
+                <Grid Grid.Row="3" Grid.Column="1">
+                    <TextBox Name="threes" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" FontFamily="Buxton Sketch" UseLayoutRounding="True" HorizontalContentAlignment="Center" GotFocus="ScoreCardSelection" IsReadOnly="True"/>
+                </Grid>
+                <Grid Grid.Row="4" Grid.Column="1">
+                    <TextBox Name="fours" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" FontFamily="Buxton Sketch" UseLayoutRounding="True" HorizontalContentAlignment="Center" GotFocus="ScoreCardSelection" IsReadOnly="True"/>
+                </Grid>
+                <Grid Grid.Row="5" Grid.Column="1">
+                    <TextBox Name="fives" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" FontFamily="Buxton Sketch" UseLayoutRounding="True" HorizontalContentAlignment="Center" GotFocus="ScoreCardSelection" IsReadOnly="True"/>
+                </Grid>
+                <Grid Grid.Row="6" Grid.Column="1">
+                    <TextBox Name="sixes" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" FontFamily="Buxton Sketch" UseLayoutRounding="True" HorizontalContentAlignment="Center" GotFocus="ScoreCardSelection" IsReadOnly="True"/>
+                </Grid>
+                <Grid Grid.Row="7" Grid.Column="1">
+                    <Label Name="Upper" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" FontFamily="Buxton Sketch" UseLayoutRounding="True" HorizontalContentAlignment="Center" />
+                </Grid>
+                <Grid Grid.Row="8" Grid.Column="1">
+                    <Label Name="Bonus" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" FontFamily="Buxton Sketch" UseLayoutRounding="True" HorizontalContentAlignment="Center" />
+                </Grid>
+                <Grid Grid.Row="9" Grid.Column="1">
+                    <Label Name="TotalUpper" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" FontFamily="Buxton Sketch" UseLayoutRounding="True" HorizontalContentAlignment="Center" />
+                </Grid>
+
+                <!-- TITLE ROW -->
+                <Grid Grid.Row="0" Grid.Column="0">
+                    <Label Content="UPPER SECTION" FontFamily="Trebuchet MS" FontSize="10" />
+                </Grid>
+                <Grid Grid.Row="0" Grid.Column="1">
+                    <Label Content="Player 1" FontFamily="Trebuchet MS" FontSize="10"/>
+                </Grid>
+                <Grid Grid.Row="0" Grid.Column="2">
+                    <Label Content="Player 2" FontFamily="Trebuchet MS" FontSize="10"/>
+                </Grid>
+                <Grid Grid.Row="0" Grid.Column="3">
+                    <Label Content="Player 3" FontFamily="Trebuchet MS" FontSize="10"/>
+                </Grid>
+                <Grid Grid.Row="0" Grid.Column="4">
+                    <Label Content="Player 4" FontFamily="Trebuchet MS" FontSize="10"/>
+                </Grid>
+                <Grid Grid.Row="0" Grid.Column="5">
+                    <Label Content="Player 5" FontFamily="Trebuchet MS" FontSize="10"/>
+                </Grid>
+                <Grid Grid.Row="0" Grid.Column="6">
+                    <Label Content="Player 6" FontFamily="Trebuchet MS" FontSize="10"/>
+                </Grid>
+
+                <!-- Column 0 Labels-->
+                <Grid Grid.Row="1" Grid.Column="0">
+                    <Label Content="aces" FontFamily="Trebuchet MS" FontSize="10"/>
+                </Grid>
+                <Grid Grid.Row="2" Grid.Column="0">
+                    <Label Content="twos" FontFamily="Trebuchet MS" FontSize="10"/>
+                </Grid>
+                <Grid Grid.Row="3" Grid.Column="0">
+                    <Label Content="threes" FontFamily="Trebuchet MS" FontSize="10"/>
+                </Grid>
+                <Grid Grid.Row="4" Grid.Column="0">
+                    <Label Content="fours" FontFamily="Trebuchet MS" FontSize="10"/>
+                </Grid>
+                <Grid Grid.Row="5" Grid.Column="0">
+                    <Label Content="fives" FontFamily="Trebuchet MS" FontSize="10"/>
+                </Grid>
+                <Grid Grid.Row="6" Grid.Column="0">
+                    <Label Content="sixes" FontFamily="Trebuchet MS" FontSize="10"/>
+                </Grid>
+                <Grid Grid.Row="7" Grid.Column="0">
+                    <Label Content="Total Score" FontFamily="Trebuchet MS" FontSize="10"/>
+                </Grid>
+                <Grid Grid.Row="8" Grid.Column="0">
+                    <Label Content="Bonus" FontFamily="Trebuchet MS" FontSize="10"/>
+                </Grid>
+                <Grid Grid.Row="9" Grid.Column="0">
+                    <Label Content="Upper Total" FontFamily="Trebuchet MS" FontSize="10"/>
+                </Grid>
+                <!--FORMATTING-->
+                <Grid Grid.Row="0" Grid.ColumnSpan="7">
+                    <Border BorderBrush="Black" BorderThickness="2"></Border>
+                </Grid>
+                <Grid Grid.Column="0" Grid.RowSpan="10">
+                    <Border BorderBrush="Black" BorderThickness="2 0 0 2"></Border>
+                </Grid>
+                <Grid Grid.Column="1" Grid.RowSpan="10" >
+                    <Border BorderBrush="Black" BorderThickness="2 0 0 2"></Border>
+                </Grid>
+                <Grid Grid.Column="2" Grid.RowSpan="10" >
+                    <Border BorderBrush="Black" BorderThickness="2 0 0 2"></Border>
+                </Grid>
+                <Grid Grid.Column="3" Grid.RowSpan="10" >
+                    <Border BorderBrush="Black" BorderThickness="2 0 0 2"></Border>
+                </Grid>
+                <Grid Grid.Column="4" Grid.RowSpan="10" >
+                    <Border BorderBrush="Black" BorderThickness="2 0 0 2"></Border>
+                </Grid>
+                <Grid Grid.Column="5" Grid.RowSpan="10" >
+                    <Border BorderBrush="Black" BorderThickness="2 0 0 2"></Border>
+                </Grid>
+                <Grid Grid.Column="6" Grid.RowSpan="10" >
+                    <Border BorderBrush="Black" BorderThickness="2 0 0 2"></Border>
+                </Grid>
+                <Grid Grid.Row="1">
+                    <Border BorderBrush="Black" BorderThickness="0 0 0 2" ></Border>
+                </Grid>
+                <Grid Grid.Row="2">
+                    <Border BorderBrush="Black" BorderThickness="0 0 0 2"></Border>
+                </Grid>
+                <Grid Grid.Row="3">
+                    <Border BorderBrush="Black" BorderThickness="0 0 0 2"></Border>
+                </Grid>
+                <Grid Grid.Row="4">
+                    <Border BorderBrush="Black" BorderThickness="0 0 0 2"></Border>
+                </Grid>
+                <Grid Grid.Row="5">
+                    <Border BorderBrush="Black" BorderThickness="0 0 0 2"></Border>
+                </Grid>
+                <Grid Grid.Row="6" Grid.ColumnSpan="7">
+                    <Border BorderBrush="Black" BorderThickness="0 0 0 2"></Border>
+                </Grid>
+                <Grid Grid.Row="7" >
+                    <Border BorderBrush="Black" BorderThickness="0 0 0 2"></Border>
+                </Grid>
+                <Grid Grid.Row="8" Grid.ColumnSpan="7">
+                    <Border BorderBrush="Black" BorderThickness="0 0 0 2"></Border>
+                </Grid>
+                <Grid Grid.Row="9">
+                    <Border BorderBrush="Black" BorderThickness="0 0 0 2"></Border>
+                </Grid>
+
+                <Grid Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="6">
+                    <Border BorderBrush="LightGray" BorderThickness="0 0 0 1" ></Border>
+                </Grid>
+                <Grid Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="6">
+                    <Border BorderBrush="LightGray" BorderThickness="0 0 0 1"></Border>
+                </Grid>
+                <Grid Grid.Row="3" Grid.Column="1" Grid.ColumnSpan="6">
+                    <Border BorderBrush="LightGray" BorderThickness="0 0 0 1"></Border>
+                </Grid>
+                <Grid Grid.Row="4" Grid.Column="1" Grid.ColumnSpan="6">
+                    <Border BorderBrush="LightGray" BorderThickness="0 0 0 1"></Border>
+                </Grid>
+                <Grid Grid.Row="5" Grid.Column="1" Grid.ColumnSpan="6">
+                    <Border BorderBrush="LightGray" BorderThickness="0 0 0 1"></Border>
+                </Grid>
+
+                <Grid Grid.Row="7" Grid.Column="1" Grid.ColumnSpan="6">
+                    <Border BorderBrush="LightGray" BorderThickness="0 0 0 1"></Border>
+                </Grid>
+
+            </Grid>
+            <!--UPPER_SECTION GRID-->
+
+        </Grid>
+        <Grid Grid.Row="3" Grid.Column="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="100"/>
+                <ColumnDefinition />
+                <ColumnDefinition />
+                <ColumnDefinition />
+                <ColumnDefinition />
+                <ColumnDefinition />
+                <ColumnDefinition />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="20"/>
+                <RowDefinition Height="20"/>
+                <RowDefinition Height="20"/>
+                <RowDefinition Height="20"/>
+                <RowDefinition Height="20"/>
+                <RowDefinition Height="20"/>
+                <RowDefinition Height="20"/>
+                <RowDefinition Height="20"/>
+                <RowDefinition Height="20"/>
+                <RowDefinition Height="20"/>
+                <RowDefinition Height="20"/>
+            </Grid.RowDefinitions>
+            <!--LOWER SCORE LABEL-->
+            <Grid Grid.Row="1" Grid.Column="1">
+                <TextBox Name="kind3" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" FontFamily="Buxton Sketch" UseLayoutRounding="True" HorizontalContentAlignment="Center" GotFocus="ScoreCardSelection" IsReadOnly="True"/>
+            </Grid>
+            <Grid Grid.Row="2" Grid.Column="1">
+                <TextBox Name="kind4" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" FontFamily="Buxton Sketch" UseLayoutRounding="True" HorizontalContentAlignment="Center" GotFocus="ScoreCardSelection" IsReadOnly="True" />
+            </Grid>
+            <Grid Grid.Row="3" Grid.Column="1">
+                <TextBox Name="fullHouse" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" FontFamily="Buxton Sketch" UseLayoutRounding="True" HorizontalContentAlignment="Center"  GotFocus="ScoreCardSelection"  IsReadOnly="True"/>
+            </Grid>
+            <Grid Grid.Row="4" Grid.Column="1">
+                <TextBox Name="smStraight" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" FontFamily="Buxton Sketch" UseLayoutRounding="True" HorizontalContentAlignment="Center" GotFocus="ScoreCardSelection" IsReadOnly="True" />
+            </Grid>
+            <Grid Grid.Row="5" Grid.Column="1">
+                <TextBox Name="lgStraight" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" FontFamily="Buxton Sketch" UseLayoutRounding="True" HorizontalContentAlignment="Center" GotFocus="ScoreCardSelection" IsReadOnly="True" />
+            </Grid>
+            <Grid Grid.Row="6" Grid.Column="1">
+                <TextBox Name="yahtzee" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" FontFamily="Buxton Sketch" UseLayoutRounding="True" HorizontalContentAlignment="Center" GotFocus="ScoreCardSelection" IsReadOnly="True" />
+            </Grid>
+            <Grid Grid.Row="7" Grid.Column="1">
+                <TextBox Name="chance" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" FontFamily="Buxton Sketch" UseLayoutRounding="True" HorizontalContentAlignment="Center" GotFocus="ScoreCardSelection" IsReadOnly="True" />
+            </Grid>
+            <Grid Grid.Row="8" Grid.Column="1">
+                <Label Name="Lower" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" FontFamily="Buxton Sketch" UseLayoutRounding="True" HorizontalContentAlignment="Center"/>
+            </Grid>
+            <Grid Grid.Row="9" Grid.Column="1">
+                <Label Name="Upper2" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" FontFamily="Buxton Sketch" UseLayoutRounding="True" HorizontalContentAlignment="Center"/>
+            </Grid>
+            <Grid Grid.Row="10" Grid.Column="1">
+                <Label Name="Total" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" FontFamily="Buxton Sketch" UseLayoutRounding="True" HorizontalContentAlignment="Center" />
+            </Grid>
+            <!-- TITLE ROW -->
+            <Grid Grid.Row="0" Grid.Column="0">
+                <Label Content="LOWER SECTION" FontFamily="Trebuchet MS" FontSize="10"/>
+            </Grid>
+
+            <!-- Column 0 Labels-->
+            <Grid Grid.Row="1" Grid.Column="0">
+                <Label Content="3 of a Kind" FontFamily="Trebuchet MS" FontSize="10"/>
+            </Grid>
+            <Grid Grid.Row="2" Grid.Column="0">
+                <Label Content="4 of a Kind" FontFamily="Trebuchet MS" FontSize="10"/>
+            </Grid>
+            <Grid Grid.Row="3" Grid.Column="0">
+                <Label Content="Full House" FontFamily="Trebuchet MS" FontSize="10"/>
+            </Grid>
+            <Grid Grid.Row="4" Grid.Column="0">
+                <Label Content="Sm Straight" FontFamily="Trebuchet MS" FontSize="10"/>
+            </Grid>
+            <Grid Grid.Row="5" Grid.Column="0">
+                <Label Content="Lg Straight" FontFamily="Trebuchet MS" FontSize="10"/>
+            </Grid>
+            <Grid Grid.Row="6" Grid.Column="0">
+                <Label Content="YAHTZEE" FontFamily="Trebuchet MS" FontSize="10"/>
+            </Grid>
+            <Grid Grid.Row="7" Grid.Column="0">
+                <Label Content="Chance" FontFamily="Trebuchet MS" FontSize="10"/>
+            </Grid>
+            <Grid Grid.Row="8" Grid.Column="0">
+                <Label Content="Lower Total" FontFamily="Trebuchet MS" FontSize="10"/>
+            </Grid>
+            <Grid Grid.Row="9" Grid.Column="0">
+                <Label Content="Upper Total" FontFamily="Trebuchet MS" FontSize="10"/>
+            </Grid>
+            <Grid Grid.Row="10" Grid.Column="0">
+                <Label Content="Grand Total" FontFamily="Trebuchet MS" FontSize="10"/>
+            </Grid>
+            <!--FORMATTING-->
+            <Grid Grid.Row="0" Grid.ColumnSpan="7">
+                <Border BorderBrush="Black" BorderThickness="2"></Border>
+            </Grid>
+            <Grid Grid.Column="0" Grid.RowSpan="11">
+                <Border BorderBrush="Black" BorderThickness="2 0 0 2"></Border>
+            </Grid>
+            <Grid Grid.Column="1" Grid.RowSpan="11" >
+                <Border BorderBrush="Black" BorderThickness="2 0 0 2"></Border>
+            </Grid>
+            <Grid Grid.Column="2" Grid.RowSpan="11" >
+                <Border BorderBrush="Black" BorderThickness="2 0 0 2"></Border>
+            </Grid>
+            <Grid Grid.Column="3" Grid.RowSpan="11" >
+                <Border BorderBrush="Black" BorderThickness="2 0 0 2"></Border>
+            </Grid>
+            <Grid Grid.Column="4" Grid.RowSpan="11" >
+                <Border BorderBrush="Black" BorderThickness="2 0 0 2"></Border>
+            </Grid>
+            <Grid Grid.Column="5" Grid.RowSpan="11" >
+                <Border BorderBrush="Black" BorderThickness="2 0 0 2"></Border>
+            </Grid>
+            <Grid Grid.Column="6" Grid.RowSpan="11" >
+                <Border BorderBrush="Black" BorderThickness="2 0 2 2"></Border>
+            </Grid>
+            <Grid Grid.Row="1">
+                <Border BorderBrush="Black" BorderThickness="0 0 0 2" ></Border>
+            </Grid>
+            <Grid Grid.Row="2">
+                <Border BorderBrush="Black" BorderThickness="0 0 0 2"></Border>
+            </Grid>
+            <Grid Grid.Row="3">
+                <Border BorderBrush="Black" BorderThickness="0 0 0 2"></Border>
+            </Grid>
+            <Grid Grid.Row="4">
+                <Border BorderBrush="Black" BorderThickness="0 0 0 2"></Border>
+            </Grid>
+            <Grid Grid.Row="5">
+                <Border BorderBrush="Black" BorderThickness="0 0 0 2"></Border>
+            </Grid>
+            <Grid Grid.Row="6">
+                <Border BorderBrush="Black" BorderThickness="0 0 0 2"/>
+            </Grid>
+            <Grid Grid.Row="7" Grid.ColumnSpan="7">
+                <Border BorderBrush="Black" BorderThickness="0 0 0 2"></Border>
+            </Grid>
+            <Grid Grid.Row="8">
+                <Border BorderBrush="Black" BorderThickness="0 0 0 2"></Border>
+            </Grid>
+            <Grid Grid.Row="9" Grid.ColumnSpan="7">
+                <Border BorderBrush="Black" BorderThickness="0 0 0 2"></Border>
+            </Grid>
+            <Grid Grid.Row="10">
+                <Border BorderBrush="Black" BorderThickness="0 0 0 2"></Border>
+            </Grid>
+            <Grid Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="6">
+                <Border BorderBrush="LightGray" BorderThickness="0 0 0 1" ></Border>
+            </Grid>
+            <Grid Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="6">
+                <Border BorderBrush="LightGray" BorderThickness="0 0 0 1"></Border>
+            </Grid>
+            <Grid Grid.Row="3" Grid.Column="1" Grid.ColumnSpan="6">
+                <Border BorderBrush="LightGray" BorderThickness="0 0 0 1"></Border>
+            </Grid>
+            <Grid Grid.Row="4" Grid.Column="1" Grid.ColumnSpan="6">
+                <Border BorderBrush="LightGray" BorderThickness="0 0 0 1"></Border>
+            </Grid>
+            <Grid Grid.Row="5" Grid.Column="1" Grid.ColumnSpan="6">
+                <Border BorderBrush="LightGray" BorderThickness="0 0 0 1"></Border>
+            </Grid>
+            <Grid Grid.Row="6" Grid.Column="1" Grid.ColumnSpan="6">
+                <Border BorderBrush="LightGray" BorderThickness="0 0 0 1"></Border>
+            </Grid>
+            <Grid Grid.Row="8" Grid.Column="1" Grid.ColumnSpan="6">
+                <Border BorderBrush="LightGray" BorderThickness="0 0 0 1"></Border>
+            </Grid>
+
+        </Grid>
+        <!--LOWER SECTION GRID-->
+        <Grid Grid.Row="5" Grid.Column="1">
+            <Label Name="dice_1"  HorizontalAlignment="Left" Margin="92,19,0,0" VerticalAlignment="Top" Height="45" Width="45" BorderBrush="Black" BorderThickness="2"/>
+            <Label Name="dice_2"  HorizontalAlignment="Left" Margin="158,19,0,0" VerticalAlignment="Top" Height="45" Width="45" BorderBrush="Black" BorderThickness="2"/>
+            <Label Name="dice_3"  HorizontalAlignment="Left" Margin="227,19,0,0" VerticalAlignment="Top" Height="45" Width="45" BorderBrush="Black" BorderThickness="2"/>
+            <Label Name="dice_4"  HorizontalAlignment="Left" Margin="296,19,0,0" VerticalAlignment="Top" Height="45" Width="45" BorderBrush="Black" BorderThickness="2"/>
+            <Label Name="dice_5"  HorizontalAlignment="Left" Margin="361,19,0,0" VerticalAlignment="Top" Height="45" Width="45" BorderBrush="Black" BorderThickness="2"/>
+
+            <ToggleButton Name="hold_1" Content="HOLD" HorizontalAlignment="Left" Margin="91,71,0,0" VerticalAlignment="Top" Width="45" FontFamily="Trebuchet MS" FontSize="10" />
+            <ToggleButton Name="hold_2" Content="HOLD" HorizontalAlignment="Left" Margin="158,71,0,0" VerticalAlignment="Top" Width="45" FontFamily="Trebuchet MS" FontSize="10"/>
+            <ToggleButton Name="hold_3" Content="HOLD" HorizontalAlignment="Left" Margin="227,71,0,0" VerticalAlignment="Top" Width="45" FontFamily="Trebuchet MS" FontSize="10"/>
+            <ToggleButton Name="hold_4" Content="HOLD" HorizontalAlignment="Left" Margin="296,71,0,0" VerticalAlignment="Top" Width="45" FontFamily="Trebuchet MS" FontSize="10"/>
+            <ToggleButton Name="hold_5" Content="HOLD" HorizontalAlignment="Left" Margin="361,71,0,0" VerticalAlignment="Top" Width="45" FontFamily="Trebuchet MS" FontSize="10"/>
+            <Button Content="ROLL" Name="roll" HorizontalAlignment="Left" Margin="91,99,0,0" VerticalAlignment="Top" Width="125" Height="45" Click="roll_Click"/>
+            <Button Content="SCORE" Name="score" HorizontalAlignment="Left" Margin="280,99,0,0" VerticalAlignment="Top" Width="125" Height="45" Click="score_Click" />
+        </Grid>
+
+    </Grid>
+</Window>
